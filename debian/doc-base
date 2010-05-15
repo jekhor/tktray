@@ -1,0 +1,10 @@
+Document: tktray
+Title: Tktray HTML Documentation
+Author: Anton Kovalenko <anton@sw4me.com>
+Abstract: This is a documentation for Tktray - Freedesktop system tray support
+ extension for Tcl/Tk. It contains manual for tktray Tcl package.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/tktray/tktray.html
+Files: /usr/share/doc/tktray/*.html

@@ -1,0 +1,16 @@
+Source: tktray
+Section: libs
+Priority: optional
+Maintainer: Sergei Golovan <sgolovan@debian.org>
+Build-Depends: debhelper (>= 6.0.0), tk-dev, libx11-dev, x11proto-xext-dev, libxext-dev, quilt
+Standards-Version: 3.8.4
+Homepage: http://code.google.com/p/tktray/
+
+Package: tktray
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, tk | wish
+Description: Freedesktop system tray icon support for Tcl/Tk on X11
+ Tktray is an extension that is able to create system tray icons.
+ It follows http://www.freedesktop.org specifications. This
+ protocol is supported by modern versions of KDE and GNOME panels,
+ and by some other panel-like application.
