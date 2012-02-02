@@ -1,3 +1,10 @@
+tktray (1.3.8-1.jekhor1) unstable; urgency=low
+
+  * Add patch for issue #6
+  * New maintainer
+
+ -- Yauhen Kharuzhy <jekhor@gmail.com>  Thu, 02 Feb 2012 19:06:20 +0300
+
 tktray (1.3.8-1) unstable; urgency=low
 
   * New upstream release.
