@@ -1,0 +1,31 @@
+From: Yauhen Kharuzhy <jekhor@gmail.com>
+Date: Thu, 2 Feb 2012 18:55:01 +0300
+Subject: Fix XSendEvent wrong mask in the XembedRequestDock()
+
+http://code.google.com/p/tktray/issues/detail?id=6
+
+Signed-off-by: Yauhen Kharuzhy <jekhor@gmail.com>
+---
+ tktray.c |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tktray.c b/tktray.c
+index 1aef2af..af55560 100644
+--- a/tktray.c
++++ b/tktray.c
+@@ -412,12 +412,12 @@ static void XembedRequestDock(DockIcon *icon)
+     ev.xclient.window = icon->myManager;
+     ev.xclient.message_type = icon->a_NET_SYSTEM_TRAY_OPCODE;
+     ev.xclient.format = 32;
+-    ev.xclient.data.l[0]=0;
++    ev.xclient.data.l[0]=CurrentTime;
+     ev.xclient.data.l[1]=SYSTEM_TRAY_REQUEST_DOCK;
+     ev.xclient.data.l[2]=icon->wrapper;
+     ev.xclient.data.l[3]=0;
+     ev.xclient.data.l[4]=0;
+-    XSendEvent(dpy, icon->myManager, True, StructureNotifyMask|SubstructureNotifyMask, &ev);
++    XSendEvent(dpy, icon->myManager, False, NoEventMask, &ev);
+  }
+ 
+ static void CheckArgbVisual(DockIcon *icon)
+-- 
